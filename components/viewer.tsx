@@ -136,30 +136,14 @@ export default function Viewer() {
 
 
             <span
-              className="
-              text-sm
-              font-medium
-              text-gray-500
-              "
-            >
+              className="text-sm font-medium text-gray-500">
               Carregando indicadores...
             </span>
-
-
           </div>
-
-
         </main>
-
-
       </div>
-
     )
-
   }
-
-
-
   /*
   ============================
   NOT FOUND
@@ -236,27 +220,21 @@ export default function Viewer() {
 
 
           <button
-
-            onClick={() => window.history.back()}
-
-            className="
-            flex items-center gap-2
-            rounded-xl
-            bg-[#12A874]
-            px-5 py-2.5
-            text-sm font-medium
-            text-white
-            transition
-            hover:bg-[#0d8c61]
-            "
-
-          >
-
-            <ArrowLeft size={16}/>
-
-            Voltar
-
-          </button>
+  onClick={() => {
+    window.location.href = "https://tibene2022.wixsite.com/novabene"
+  }}
+  className="
+  flex h-10 w-10
+  items-center justify-center
+  rounded-xl
+  text-gray-500
+  transition
+  hover:bg-emerald-50
+  hover:text-[#12A874]
+  "
+>
+  <ArrowLeft size={20}/>
+</button>
 
 
 
@@ -322,25 +300,22 @@ export default function Viewer() {
 
 
 
-          <button
-
-            onClick={() => window.history.back()}
-
-            className="
-            flex h-10 w-10
-            items-center justify-center
-            rounded-xl
-            text-gray-500
-            transition
-            hover:bg-emerald-50
-            hover:text-[#12A874]
-            "
-
-          >
-
-            <ArrowLeft size={20}/>
-
-          </button>
+         <button
+  onClick={() => {
+    window.location.href = "https://tibene2022.wixsite.com/novabene"
+  }}
+  className="
+  flex h-10 w-10
+  items-center justify-center
+  rounded-xl
+  text-gray-500
+  transition
+  hover:bg-emerald-50
+  hover:text-[#12A874]
+  "
+>
+  <ArrowLeft size={20}/>
+</button>
 
 
 
