@@ -59,7 +59,7 @@ export default function Viewer() {
 
   const [loading, setLoading] = useState(true)
   const [report, setReport] = useState<LoadedReport | null>(null)
-
+  const backLink = report?.linkVoltar ?? "https://tibene2022.wixsite.com/novabene"
 
   useEffect(() => {
 
@@ -71,21 +71,20 @@ export default function Viewer() {
 
       const reports = await getReports()
 
-
+      /**
+       * console.log("Todos os relatórios:", reports)
+      console.log("BI:", bi)
+      console.log("Relatório selecionado:", reports[bi])
+      console.log("linkVoltar:", reports[bi]?.linkVoltar)
+       */
       if (reports[bi]) {
-
         setReport({
           id: bi,
           ...reports[bi],
         })
-
       }
-
       setLoading(false)
-
     }
-
-
     load()
 
   }, [])
@@ -109,7 +108,7 @@ export default function Viewer() {
           className="
           flex h-20 items-center border-b border-emerald-100 bg-white px-6 shadow-sm " >
 
-          <div className="h-10 w-32 animate-pulse rounded bg-gray-100"/>
+          <div className="h-10 w-32 animate-pulse rounded bg-gray-100" />
 
         </header>
 
@@ -152,89 +151,32 @@ export default function Viewer() {
 
 
   if (!report) {
-
     return (
-
       <div
-        className="
-        flex h-dvh
-        items-center
-        justify-center
-        bg-[#f8faf9]
-        "
+        className="flex h-dvh items-centerjustify-center bg-[#f8faf9]"
       >
-
         <div
-          className="
-          flex max-w-sm
-          flex-col
-          items-center
-          gap-5
-          text-center
-          "
+          className="flex max-w-sm flex-col items-center gap-5 text-center"
         >
-
-
           <div
-            className="
-            flex h-16 w-16
-            items-center justify-center
-            rounded-2xl
-            bg-red-50
-            ring-1 ring-red-100
-            "
-          >
-
-            <FileWarning
-              className="text-red-500"
-              size={30}
+            className="flex h-16 w-16 items-center justify-center rounded-2xl bg-red-50 ring-1 ring-red-100" >
+            <FileWarning className="text-red-500" size={30}
             />
 
           </div>
-
-
-
           <div>
-
-            <h2
-              className="
-              text-lg
-              font-semibold
-              text-[#005C4D]
-              "
-            >
-              Relatório não encontrado
-            </h2>
-
-
-            <p className="mt-2 text-sm text-gray-500">
-
-              O painel solicitado não existe.
-
-            </p>
-
-
+            <h2 className="text-lg font-semibold text-[#005C4D] "> Relatório não encontrado</h2>
+            <p className="mt-2 text-sm text-gray-500">O painel solicitado não existe. </p>
           </div>
-
-
-
-
           <button
-  onClick={() => {
-    window.location.href = "https://tibene2022.wixsite.com/novabene"
-  }}
-  className="
-  flex h-10 w-10
-  items-center justify-center
-  rounded-xl
-  text-gray-500
-  transition
-  hover:bg-emerald-50
-  hover:text-[#12A874]
-  "
->
-  <ArrowLeft size={20}/>
-</button>
+            onClick={() => {
+              window.location.href = backLink
+            }}
+            className="flex h-10 w-10 items-center justify-center rounded-xl text-gray-500  transition hover:bg-emerald-50 hover:text-[#12A874]
+          "
+          >
+            <ArrowLeft size={20} />
+          </button>
 
 
 
@@ -300,11 +242,11 @@ export default function Viewer() {
 
 
 
-         <button
-  onClick={() => {
-    window.location.href = "https://tibene2022.wixsite.com/novabene"
-  }}
-  className="
+          <button
+            onClick={() => {
+              window.location.href = backLink
+            }}
+            className="
   flex h-10 w-10
   items-center justify-center
   rounded-xl
@@ -313,9 +255,9 @@ export default function Viewer() {
   hover:bg-emerald-50
   hover:text-[#12A874]
   "
->
-  <ArrowLeft size={20}/>
-</button>
+          >
+            <ArrowLeft size={20} />
+          </button>
 
 
 
@@ -352,7 +294,7 @@ export default function Viewer() {
 
 
 
-          <div className="hidden h-10 w-px bg-emerald-100 sm:block"/>
+          <div className="hidden h-10 w-px bg-emerald-100 sm:block" />
 
 
 
@@ -373,7 +315,7 @@ export default function Viewer() {
                 "
               >
 
-                <Icon size={22}/>
+                <Icon size={22} />
 
               </div>
 
@@ -488,7 +430,7 @@ export default function Viewer() {
 
           >
 
-            <ExternalLink size={18}/>
+            <ExternalLink size={18} />
 
           </a>
 
